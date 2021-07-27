@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Food</string>
+    <string name="emailhint">E-Mail</string>
+    <string name="passhint">Şifre</string>
+    <string name="login">Giriş Yap</string>
+    <string name="register">Kayıt Ol</string>
+    <string name="name">Ad-Soyad</string>
+    <string name="age">Yaş</string>
+    <string name="passvalidation">Şifreyi Onayla</string>
+</resources>
