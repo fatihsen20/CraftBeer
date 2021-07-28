@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/login_container"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="5dp"
+    android:background="@color/bgactivity"
+    tools:context=".activities.LoginActivity">
+
+    <EditText
+        android:id="@+id/activity_main_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/emailhint"
+        android:textSize="17sp"
+        android:textColor="@color/textcolor"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:inputType="textEmailAddress"
+
+        />
+
+    <EditText
+        android:id="@+id/activity_main_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/passhint"
+        android:textSize="17sp"
+        android:textColor="@color/textcolor"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:inputType="textPassword"
+        android:layout_marginTop="5dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <Button
+            android:id="@+id/activity_main_login"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:textAllCaps="false"
+            android:textColor="@color/btntextcolor"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:background="@drawable/custombutton"
+            android:onClick="Login"
+            />
+
+        <Button
+            android:id="@+id/activity_main_register"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/register"
+            android:textAllCaps="false"
+            android:textColor="@color/btntextcolor"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:background="@drawable/custombutton"
+            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
+            android:onClick="Register"
+            />
+
+        <Button
+            android:id="@+id/activity_main_forgotpass"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Şifremi Unuttum"
+            android:textAllCaps="false"
+            android:textColor="@color/btntextcolor"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:background="@drawable/custombutton"
+            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/bgactivity"
+    android:padding="5dp"
+    >
+
+    <EditText
+        android:id="@+id/fragment_forgot_pass_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/emailhint"
+        android:textSize="17sp"
+        android:textColor="@color/textcolor"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:inputType="textEmailAddress"
+        />
+
+    <Button
+        android:id="@+id/fragment_forgot_pass_btnReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/forgotpass"
+        android:textAllCaps="false"
+        android:textColor="@color/btntextcolor"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:background="@drawable/custombutton"
+        android:layout_marginTop="15dp"
+        />
+
+</LinearLayout>

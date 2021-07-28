@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.example.food.activities.LoginActivity;
 import com.example.food.activities.MainActivity;
 import com.example.food.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,8 +21,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.HashMap;
 
 public class DBHandler {
 
@@ -97,7 +96,7 @@ public class DBHandler {
                                     if (task.isSuccessful()) {
                                         Toast.makeText(my_registerActivity, "Kayıt Başarılı.", Toast.LENGTH_SHORT).show();
 
-                                        intent = new Intent(my_registerActivity, MainActivity.class);
+                                        intent = new Intent(my_registerActivity, LoginActivity.class);
                                         my_registerActivity.startActivity(intent);
                                     } else
                                         Toast.makeText(my_registerActivity, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -123,9 +122,9 @@ public class DBHandler {
                          */
                         updatePass(pass, loginActivity, mAuth.getCurrentUser().getUid());
 
-                        //Intent intent = new Intent(loginActivity , MainMenu.class);
-                        //intent.putExtra("uId" , mAuth.getCurrentUser().getUid());
-                        //loginActivity.startActivity(intent);
+                        Intent intent = new Intent(loginActivity , MainActivity.class);
+                        intent.putExtra("uId" , mAuth.getCurrentUser().getUid());
+                        loginActivity.startActivity(intent);
 
                         Toast.makeText(loginActivity, "Giriş Başarılı!", Toast.LENGTH_SHORT).show();
                     }
@@ -150,7 +149,7 @@ public class DBHandler {
                             alert.setPositiveButton("Tamam", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    intent = new Intent(activity, MainActivity.class);
+                                    intent = new Intent(activity, LoginActivity.class);
                                     activity.startActivity(intent);
                                 }
                             });
