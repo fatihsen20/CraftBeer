@@ -9,6 +9,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.example.food.activities.MainActivity;
+import com.example.food.activities.MainMenuActivity;
 import com.example.food.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -121,7 +122,7 @@ public class DBHandler {
                          */
                         updatePass(pass, loginActivity, mAuth.getCurrentUser().getUid());
 
-                        Intent intent = new Intent(loginActivity , MainActivity.class);
+                        Intent intent = new Intent(loginActivity , MainMenuActivity.class);
                         intent.putExtra("uId" , mAuth.getCurrentUser().getUid());
                         loginActivity.startActivity(intent);
 

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private DBHandler dbHandler;
     private Intent intent;
     private Button btnforgotpass;
-
+    
     private void init(){
         email = findViewById(R.id.activity_main_email);
         pass = findViewById(R.id.activity_main_pass);

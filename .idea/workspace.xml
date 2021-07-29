@@ -11,20 +11,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec47c6cc-8b72-462e-8d75-ae563edf91c6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/ForgotPassActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/beerbg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/custom_email_icon.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/custom_input.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/custom_name_surname_icon.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/custom_pass_icon.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_email.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_email_focused.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_name_and_surname.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_name_and_surname_focused.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_pass.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_pass_focused.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_forgot_pass.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/toolbar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/MainMenuActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/ui/gallery/GalleryFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/ui/gallery/GalleryViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/ui/home/HomeFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/ui/home/HomeViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/ui/slideshow/SlideshowFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/ui/slideshow/SlideshowViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v21/ic_menu_camera.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v21/ic_menu_gallery.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v21/ic_menu_slideshow.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/beer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/side_nav_bar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_menu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_gallery.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_slideshow.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/main_menu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/drawables.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -38,14 +48,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/LoginActivity.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/RegisterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/RegisterActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/food/adapters/DBHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/adapters/DBHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/food/fragments/ForgotPassFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/fragments/ForgotPassFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
     </list>
@@ -93,8 +97,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
-    <property name="memory.settings.postsync.last.time.stamp" value="1627463029845" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="memory.settings.postsync.last.time.stamp" value="1627553711944" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -114,8 +118,8 @@
       <recent name="com.example.food.fragments" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
     </key>
   </component>
   <component name="RunManager">
@@ -208,12 +212,20 @@
       <option name="project" value="LOCAL" />
       <updated>1627477496612</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Tasarımlar Yapıldı.">
+      <created>1627553577380</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1627553577380</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="----" />
-    <option name="LAST_COMMIT_MESSAGE" value="----" />
+    <MESSAGE value="Tasarımlar Yapıldı." />
+    <option name="LAST_COMMIT_MESSAGE" value="Tasarımlar Yapıldı." />
   </component>
   <component name="WindowStateProjectService">
     <state x="1116" y="254" key="#com.intellij.ide.util.MemberChooser" timestamp="1627476109267">
@@ -241,44 +253,45 @@
       <screen x="0" y="23" width="1920" height="984" />
     </state>
     <state x="781" y="360" key="AndroidCreateXmlResourceDialog/0.23.1920.984@0.23.1920.984" timestamp="1627470177063" />
-    <state x="461" y="108" key="CommitChangelistDialog2" timestamp="1627477496047">
+    <state x="461" y="108" key="CommitChangelistDialog2" timestamp="1627553576520">
       <screen x="0" y="23" width="1920" height="982" />
     </state>
-    <state x="461" y="108" key="CommitChangelistDialog2/0.23.1920.982@0.23.1920.982" timestamp="1627477496047" />
+    <state x="461" y="108" key="CommitChangelistDialog2/0.23.1920.982@0.23.1920.982" timestamp="1627553576520" />
     <state x="461" y="108" key="CommitChangelistDialog2/0.23.1920.984@0.23.1920.984" timestamp="1627470431261" />
-    <state width="1337" height="208" key="GridCell.Tab.0.bottom" timestamp="1627549588618">
+    <state width="1337" height="208" key="GridCell.Tab.0.bottom" timestamp="1627555076185">
       <screen x="0" y="23" width="1920" height="980" />
     </state>
-    <state width="1337" height="208" key="GridCell.Tab.0.bottom/0.23.1920.980@0.23.1920.980" timestamp="1627549588618" />
+    <state width="1337" height="208" key="GridCell.Tab.0.bottom/0.23.1920.980@0.23.1920.980" timestamp="1627555076185" />
     <state width="1337" height="208" key="GridCell.Tab.0.bottom/0.23.1920.982@0.23.1920.982" timestamp="1627548706345" />
     <state width="1337" height="208" key="GridCell.Tab.0.bottom/0.23.1920.984@0.23.1920.984" timestamp="1627470536225" />
-    <state width="1337" height="208" key="GridCell.Tab.0.center" timestamp="1627549588617">
+    <state width="1337" height="208" key="GridCell.Tab.0.center" timestamp="1627555076185">
       <screen x="0" y="23" width="1920" height="980" />
     </state>
-    <state width="1337" height="208" key="GridCell.Tab.0.center/0.23.1920.980@0.23.1920.980" timestamp="1627549588617" />
+    <state width="1337" height="208" key="GridCell.Tab.0.center/0.23.1920.980@0.23.1920.980" timestamp="1627555076185" />
     <state width="1337" height="208" key="GridCell.Tab.0.center/0.23.1920.982@0.23.1920.982" timestamp="1627548706345" />
     <state width="1337" height="208" key="GridCell.Tab.0.center/0.23.1920.984@0.23.1920.984" timestamp="1627470536225" />
-    <state width="1337" height="208" key="GridCell.Tab.0.left" timestamp="1627549588617">
+    <state width="1337" height="208" key="GridCell.Tab.0.left" timestamp="1627555076184">
       <screen x="0" y="23" width="1920" height="980" />
     </state>
-    <state width="1337" height="208" key="GridCell.Tab.0.left/0.23.1920.980@0.23.1920.980" timestamp="1627549588617" />
+    <state width="1337" height="208" key="GridCell.Tab.0.left/0.23.1920.980@0.23.1920.980" timestamp="1627555076184" />
     <state width="1337" height="208" key="GridCell.Tab.0.left/0.23.1920.982@0.23.1920.982" timestamp="1627548706344" />
     <state width="1337" height="208" key="GridCell.Tab.0.left/0.23.1920.984@0.23.1920.984" timestamp="1627470536225" />
-    <state width="1337" height="208" key="GridCell.Tab.0.right" timestamp="1627549588617">
+    <state width="1337" height="208" key="GridCell.Tab.0.right" timestamp="1627555076185">
       <screen x="0" y="23" width="1920" height="980" />
     </state>
-    <state width="1337" height="208" key="GridCell.Tab.0.right/0.23.1920.980@0.23.1920.980" timestamp="1627549588617" />
+    <state width="1337" height="208" key="GridCell.Tab.0.right/0.23.1920.980@0.23.1920.980" timestamp="1627555076185" />
     <state width="1337" height="208" key="GridCell.Tab.0.right/0.23.1920.982@0.23.1920.982" timestamp="1627548706345" />
     <state width="1337" height="208" key="GridCell.Tab.0.right/0.23.1920.984@0.23.1920.984" timestamp="1627470536225" />
     <state x="461" y="179" key="SettingsEditor" timestamp="1627373459558">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="461" y="179" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1627373459558" />
-    <state x="622" y="304" key="chooseDestDirectoryDialog" timestamp="1627546486335">
-      <screen x="0" y="23" width="1920" height="980" />
+    <state x="622" y="305" key="chooseDestDirectoryDialog" timestamp="1627553999157">
+      <screen x="0" y="23" width="1920" height="984" />
     </state>
     <state x="622" y="304" key="chooseDestDirectoryDialog/0.23.1920.980@0.23.1920.980" timestamp="1627546486334" />
     <state x="622" y="305" key="chooseDestDirectoryDialog/0.23.1920.982@0.23.1920.982" timestamp="1627545558950" />
+    <state x="622" y="305" key="chooseDestDirectoryDialog/0.23.1920.984@0.23.1920.984" timestamp="1627553999157" />
     <state x="336" y="137" width="1179" height="738" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1627464012239">
       <screen x="0" y="23" width="1920" height="980" />
     </state>
