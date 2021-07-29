@@ -1,6 +1,7 @@
 package com.example.food.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -32,6 +33,11 @@ public class RegisterActivity extends AppCompatActivity {
         name = findViewById(R.id.activity_register_name);
         age = findViewById(R.id.activity_register_age);
         dbHandler = new DBHandler(mAuth , mUser , firestore);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Kayıt Ol");
 
     }
 
@@ -40,6 +46,12 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         init();
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     public void Register(View view) {

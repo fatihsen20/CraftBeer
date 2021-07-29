@@ -8,7 +8,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.example.food.activities.LoginActivity;
 import com.example.food.activities.MainActivity;
 import com.example.food.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -96,7 +95,7 @@ public class DBHandler {
                                     if (task.isSuccessful()) {
                                         Toast.makeText(my_registerActivity, "Kayıt Başarılı.", Toast.LENGTH_SHORT).show();
 
-                                        intent = new Intent(my_registerActivity, LoginActivity.class);
+                                        intent = new Intent(my_registerActivity, MainActivity.class);
                                         my_registerActivity.startActivity(intent);
                                     } else
                                         Toast.makeText(my_registerActivity, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -138,7 +137,7 @@ public class DBHandler {
 
     public void resetPass(String email, final Activity activity) {
         getmAuth().sendPasswordResetEmail(email)
-                .addOnCompleteListener(activity, new OnCompleteListener<Void>() {
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
@@ -149,7 +148,7 @@ public class DBHandler {
                             alert.setPositiveButton("Tamam", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    intent = new Intent(activity, LoginActivity.class);
+                                    intent = new Intent(activity, MainActivity.class);
                                     activity.startActivity(intent);
                                 }
                             });
