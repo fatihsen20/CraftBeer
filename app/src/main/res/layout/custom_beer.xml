@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    >
+
+    <ImageView
+        android:id="@+id/custom_beer_beerImage"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+        />
+    <TextView
+        android:id="@+id/custom_beer_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bira Adı"
+        android:textSize="20sp"
+        android:textColor="@color/textcolor"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/custom_beer_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Açıklama"
+        android:textSize="18sp"
+        android:textColor="@color/textcolor"
+        />
+
+</LinearLayout>
