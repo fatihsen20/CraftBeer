@@ -4,12 +4,15 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.text.TextUtils;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
 import com.example.food.activities.MainActivity;
 import com.example.food.activities.MainMenuActivity;
+import com.example.food.activities.ui.profile.ProfileFragment;
 import com.example.food.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -21,6 +24,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
 
 public class DBHandler {
 
@@ -46,6 +51,11 @@ public class DBHandler {
     public DBHandler(FirebaseAuth mAuth) {
         mAuth = FirebaseAuth.getInstance();
         this.mAuth = mAuth;
+    }
+
+    public DBHandler(FirebaseFirestore firestore) {
+        firestore = FirebaseFirestore.getInstance();
+        this.firestore = firestore;
     }
 
     public DBHandler(FirebaseAuth mAuth, FirebaseFirestore firestore) {
@@ -192,7 +202,6 @@ public class DBHandler {
     }
 
     public void getData(final Activity activity, String uId) {
-
         DocumentReference documentReference = firestore.collection("Kullanıcılar").document(uId);
         documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -203,4 +212,9 @@ public class DBHandler {
             }
         });
     }
+
+    public void SignOut(){
+        mAuth.signOut();
+    }
+
 }

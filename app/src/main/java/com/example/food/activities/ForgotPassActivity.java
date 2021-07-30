@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.food.R;
 import com.example.food.adapters.DBHandler;
+import com.example.food.models.Animations;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ForgotPassActivity extends AppCompatActivity {
@@ -28,6 +29,8 @@ public class ForgotPassActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Şifremi Unuttum");
+
+        Animations.addAnimation(this, R.id.activity_forgot_pass_btnReset, R.anim.bounce , 1000);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {

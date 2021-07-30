@@ -17,4 +17,14 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
     </group>
+
+    <item android:title="Ayarlar">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_launcher_background"
+                android:title="Çıkış Yap" />
+        </menu>
+    </item>
+
 </menu>

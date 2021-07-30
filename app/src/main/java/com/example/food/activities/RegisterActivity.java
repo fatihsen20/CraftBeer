@@ -11,6 +11,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.example.food.R;
 import com.example.food.adapters.DBHandler;
+import com.example.food.models.Animations;
 import com.example.food.models.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -36,6 +37,8 @@ public class RegisterActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Kayıt Ol");
+
+        Animations.addAnimation(this, R.id.activity_register_BtnReg, R.anim.bounce , 1000);
 
     }
 
