@@ -46,6 +46,11 @@ public class MainMenuActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
         dbHandler = new DBHandler(mAuth);
+
+        navigationView.getMenu().findItem(R.id.nav_logout).setOnMenuItemClickListener(MenuItem->{
+            dbHandler.SignOut(this);
+            return true;
+        });
     }
 
     @Override

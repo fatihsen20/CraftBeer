@@ -37,16 +37,15 @@ public class RegisterActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Kayıt Ol");
-
-        Animations.addAnimation(this, R.id.activity_register_BtnReg, R.anim.bounce , 1000);
-
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
         init();
+        Animation();
     }
 
     @Override
@@ -74,4 +73,8 @@ public class RegisterActivity extends AppCompatActivity {
         else
             Toast.makeText(this, "Lütfen Kutucukları Boş Bırakmayınız!", Toast.LENGTH_SHORT).show();
     }
+    public void Animation(){
+        Animations.addAnimation(this, R.id.activity_register_BtnReg, R.anim.bounce , 1000);
+    }
+
 }

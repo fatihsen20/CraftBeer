@@ -12,10 +12,17 @@
 
     <ImageView
         android:id="@+id/fragment_profile_Image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:scaleType="fitXY" />
+
+    <ImageView
+        android:id="@+id/fragment_profile_changeImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/beer"
-        android:scaleType="fitXY" />
+        android:layout_toEndOf="@+id/fragment_profile_Image"
+        android:layout_toRightOf="@+id/fragment_profile_Image" />
 
     <TextView
         android:id="@+id/fragment_profile_Name"

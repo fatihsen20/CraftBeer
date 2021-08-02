@@ -22,7 +22,7 @@
         <menu>
             <item
                 android:id="@+id/nav_logout"
-                android:icon="@drawable/ic_launcher_background"
+                android:icon="@drawable/logout"
                 android:title="Çıkış Yap" />
         </menu>
     </item>

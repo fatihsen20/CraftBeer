@@ -30,7 +30,6 @@ public class ForgotPassActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Şifremi Unuttum");
 
-        Animations.addAnimation(this, R.id.activity_forgot_pass_btnReset, R.anim.bounce , 1000);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +37,7 @@ public class ForgotPassActivity extends AppCompatActivity {
         setContentView(R.layout.activity_forgot_pass);
 
         init();
+        Animation();
     }
 
     @Override
@@ -53,5 +53,9 @@ public class ForgotPassActivity extends AppCompatActivity {
         }
         else
             Toast.makeText(this, "Lütfen Kutucuğu Boş Bırakmayınız!", Toast.LENGTH_SHORT).show();
+    }
+
+    public void Animation(){
+        Animations.addAnimation(this, R.id.activity_forgot_pass_btnReset, R.anim.bounce , 1000);
     }
 }

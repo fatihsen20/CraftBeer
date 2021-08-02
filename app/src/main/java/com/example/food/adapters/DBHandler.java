@@ -213,8 +213,27 @@ public class DBHandler {
         });
     }
 
-    public void SignOut(){
-        mAuth.signOut();
+    public void SignOut(Activity activity){
+
+        AlertDialog.Builder alert = new AlertDialog.Builder(activity);
+        alert.setTitle("Çıkış Yap");
+        alert.setMessage("Çıkış Yapmak İstediğinize Emin misiniz?");
+        alert.setCancelable(false);
+        alert.setPositiveButton("Hayır", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        alert.setNegativeButton("Evet", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                mAuth.signOut();
+                intent = new Intent(activity, MainActivity.class);
+                activity.startActivity(intent);
+            }
+        });
+
+        alert.show();
     }
 
 }

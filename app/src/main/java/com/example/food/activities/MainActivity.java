@@ -7,9 +7,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
@@ -28,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private DBHandler dbHandler;
     private Intent intent;
     private Button btnforgotpass;
-    private CheckBox checkBox;
+    private CheckBox checkBox, visibilityPass;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
 
@@ -39,11 +42,13 @@ public class MainActivity extends AppCompatActivity {
         dbHandler = new DBHandler(mAuth, firestore);
         btnforgotpass = findViewById(R.id.activity_main_forgotpass);
         checkBox = findViewById(R.id.activity_main_checkbox);
+        visibilityPass = findViewById(R.id.activity_main_Visiblepass);
         Toolbar toolbar = findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Hoşgeldiniz");
 
+        //Forgot Pass Button Click Listener
         btnforgotpass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Remember me code
         sharedPreferences = this.getSharedPreferences("com.example.sharedpreferences", Context.MODE_PRIVATE);
         String getemail = sharedPreferences.getString("email" , null);
         Boolean check = sharedPreferences.getBoolean("checkbox" , false);
@@ -60,19 +66,29 @@ public class MainActivity extends AppCompatActivity {
             email.setText(getemail);
             checkBox.setChecked(check);
         }
-        Animations.addAnimation(this, R.id.activity_main_email, R.anim.lefttoright , 2000);
-        Animations.addAnimation(this, R.id.activity_main_pass, R.anim.righttoleft , 2000);
-        Animations.addAnimation(this, R.id.activity_main_checkbox, R.anim.bounce , 2000);
-        Animations.addAnimation(this, R.id.activity_main_btnContainer, R.anim.bounce , 2000);
+
+        //Checkbox PassToogleClick
+        visibilityPass.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                    pass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                else
+                    pass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            }
+        });
+
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        init();
 
+        init();
+        Animation();
     }
+
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
@@ -96,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
         intent = new Intent(this , RegisterActivity.class);
         startActivity(intent);
     }
+
     public void remember_me(SharedPreferences sharedPreferences){
         if (checkBox.isChecked()) {
             editor = sharedPreferences.edit();
@@ -110,4 +127,12 @@ public class MainActivity extends AppCompatActivity {
             editor.apply();
         }
     }
+
+    public void Animation(){
+        Animations.addAnimation(this, R.id.activity_main_email, R.anim.lefttoright , 2000);
+        Animations.addAnimation(this, R.id.activity_main_pass, R.anim.righttoleft , 2000);
+        Animations.addAnimation(this, R.id.activity_main_checkbox, R.anim.bounce , 2000);
+        Animations.addAnimation(this, R.id.activity_main_btnContainer, R.anim.bounce , 2000);
+    }
+
 }
