@@ -31,6 +31,8 @@ public class AddPhotoActivity extends AppCompatActivity {
     FirebaseStorage firebaseStorage;
     FirebaseAuth mAuth;
     Uri filePath;
+    Intent intent;
+    String uId;
     private ProgressDialog progressDialog;
     private static final int IMAGE_REQUEST = 111;
 
@@ -41,6 +43,9 @@ public class AddPhotoActivity extends AppCompatActivity {
         userPhoto = findViewById(R.id.activity_add_photo_userPhoto);
         selectPhoto = findViewById(R.id.activity_add_photo_selectPhoto);
         savePhoto = findViewById(R.id.activity_add_photo_savePhoto);
+
+        intent = getIntent();
+        uId = intent.getStringExtra("uId");
 
         selectPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,10 +81,11 @@ public class AddPhotoActivity extends AppCompatActivity {
     }
 
     public void savePhoto(){
+
         if (filePath!=null){
             showProgressDialog();
             StorageReference storageReference = firebaseStorage.getReference();
-            storageReference.child("userprofilephoto").putFile(filePath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            storageReference.child("UserImage").child(uId+"userprofilephoto").putFile(filePath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     dismissProgressDialog();

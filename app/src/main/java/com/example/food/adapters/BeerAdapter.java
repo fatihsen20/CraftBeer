@@ -21,7 +21,6 @@ public class BeerAdapter extends BaseAdapter {
     private ArrayList<Beer> beers;
     private ImageView beerImage;
     private TextView beerName;
-    private TextView beerDesc;
     private LayoutInflater inflater;
 
     public BeerAdapter(Activity activity , ArrayList<Beer> beers){
@@ -50,12 +49,10 @@ public class BeerAdapter extends BaseAdapter {
         convertView = inflater.inflate(R.layout.custom_beer,null);
         if (convertView != null){
             beerName = convertView.findViewById(R.id.custom_beer_name);
-            beerDesc = convertView.findViewById(R.id.custom_beer_description);
             beerImage = convertView.findViewById(R.id.custom_beer_beerImage);
 
             Beer beer = beers.get(position);
             beerName.setText(beer.getName());
-            beerDesc.setText(beer.getDescription());
             beerImage.setBackgroundResource(beer.getImage());
 
         }

@@ -90,6 +90,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        //Geri Tuşu İptal Edildi.
+    }
+
+    @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;

@@ -1,7 +1,9 @@
 package com.example.food.activities.ui.profile;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
@@ -10,6 +12,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,11 +29,13 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.example.food.R;
 import com.example.food.activities.AddPhotoActivity;
+import com.example.food.activities.MainActivity;
 import com.example.food.adapters.DBHandler;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -43,9 +48,12 @@ public class ProfileFragment extends Fragment {
     private TextView name, age, email;
     private DBHandler dbHandler;
     private FirebaseFirestore firestore;
+    private FirebaseAuth mAuth;
+    FirebaseStorage firebaseStorage;
     private ImageView profilePhoto, changeProfilePhoto;
     private ProgressDialog progressDialog;
-
+    private String uId;
+    private Button deleteUser;
     private ProfileViewModel profileViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -58,20 +66,48 @@ public class ProfileFragment extends Fragment {
         age = root.findViewById(R.id.fragment_profile_Age);
         email = root.findViewById(R.id.fragment_profile_email);
         profilePhoto = root.findViewById(R.id.fragment_profile_Image);
-        changeProfilePhoto = root.findViewById(R.id.fragment_profile_changeImage);
+        deleteUser = root.findViewById(R.id.fragment_profile_Delete);
+        //changeProfilePhoto = root.findViewById(R.id.fragment_profile_changeImage);
 
         firestore = FirebaseFirestore.getInstance();
-        dbHandler = new DBHandler(firestore);
+        dbHandler = new DBHandler(mAuth, firestore , firebaseStorage);
 
         Intent intent = getActivity().getIntent();
-        String uId = intent.getStringExtra("uId");
+        uId = intent.getStringExtra("uId");
         getData(uId);
 
-        changeProfilePhoto.setOnClickListener(new View.OnClickListener() {
+        profilePhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), AddPhotoActivity.class);
+                intent.putExtra("uId",uId);
                 startActivity(intent);
+            }
+        });
+
+        deleteUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+                alert.setTitle("Hesabımı Sil");
+                alert.setMessage("Hesabınızı Silmek İstediğinizden Emin misiniz? Bu İşlem Geri Alınamaz.");
+                alert.setPositiveButton("Hayır", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //
+                    }
+                });
+                alert.setNegativeButton("Evet", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dbHandler.DeleteUserFirestore(uId);
+                        dbHandler.DeleteUserAuthentication(uId);
+                        //dbHandler.DeleteUserPhoto(uId);
+                        Intent intent2 = new Intent(getContext(), MainActivity.class);
+                        startActivity(intent2);
+                    }
+                });
+                alert.show();
             }
         });
 
@@ -88,7 +124,7 @@ public class ProfileFragment extends Fragment {
         showProgressDialog();
         FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
         StorageReference storageReference = firebaseStorage.getReference();
-        storageReference.child("userprofilephoto").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+        storageReference.child("UserImage").child(uId+"userprofilephoto").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
                 progressDialog.dismiss();
@@ -99,7 +135,8 @@ public class ProfileFragment extends Fragment {
                         .into(new SimpleTarget<Drawable>() {
                             @Override
                             public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
-                                profilePhoto.setImageDrawable(resource);
+                                profilePhoto.setBackground(resource);
+
                             }
                         });
             }

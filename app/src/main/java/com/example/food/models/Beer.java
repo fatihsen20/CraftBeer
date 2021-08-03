@@ -5,8 +5,8 @@ public class Beer {
     private int Image;
 
     public Beer(String name, String description, int image) {
-        this.name = name;
         this.description = description;
+        this.name = name;
         Image = image;
     }
 

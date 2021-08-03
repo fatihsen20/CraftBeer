@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,6 +14,7 @@ import androidx.annotation.NonNull;
 import com.example.food.activities.MainActivity;
 import com.example.food.activities.MainMenuActivity;
 import com.example.food.activities.ui.profile.ProfileFragment;
+import com.example.food.models.Beer;
 import com.example.food.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -24,6 +26,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.HashMap;
 
@@ -38,6 +42,7 @@ public class DBHandler {
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
     private FirebaseFirestore firestore;
+    private FirebaseStorage firebaseStorage;
     private Intent intent;
 
     public DBHandler(FirebaseAuth mAuth, FirebaseUser mUser, FirebaseFirestore firestore) {
@@ -63,6 +68,15 @@ public class DBHandler {
         firestore = FirebaseFirestore.getInstance();
         this.mAuth = mAuth;
         this.firestore = firestore;
+    }
+
+    public DBHandler(FirebaseAuth mAuth, FirebaseFirestore firestore ,FirebaseStorage firebaseStorage) {
+        mAuth = FirebaseAuth.getInstance();
+        firestore = FirebaseFirestore.getInstance();
+        firebaseStorage = FirebaseStorage.getInstance();
+        this.mAuth = mAuth;
+        this.firestore = firestore;
+        this.firebaseStorage = firebaseStorage;
     }
 
     public FirebaseAuth getmAuth() {
@@ -176,27 +190,27 @@ public class DBHandler {
                 .document(uId).update("pass", pass);
     }
 
-    public void DeleteUserFirestore(final Activity activity, String uId) {
+    public void DeleteUserFirestore(String uId) {
         firestore.collection("Kullanıcılar")
                 .document(uId).delete().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful())
-                    Toast.makeText(activity, "Firestore Silme İşlemi Başarılı", Toast.LENGTH_SHORT).show();
+                    Log.e("Başarılı",  "Firestore'dan silindi");
                 else
-                    Toast.makeText(activity, "Firestore Silme İşlemi başarısız!!", Toast.LENGTH_SHORT).show();
+                    Log.e("Başarısız",  "Firestore'dan silinmedi");
             }
         });
     }
 
-    public void DeleteUserAuthentication(final Activity activity, String uId) {
+    public void DeleteUserAuthentication(String uId) {
         mAuth.getCurrentUser().delete().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful())
-                    Toast.makeText(activity, "Kişilerden Silme İşlemi Başarılı!", Toast.LENGTH_SHORT).show();
+                    Log.e("Başarılı",  "Kişilerden silindi");
                 else
-                    Toast.makeText(activity, "Kişilerden Silme İşlemi Başarısız!!", Toast.LENGTH_SHORT).show();
+                    Log.e("Başarısız", "Kişilerden silinmedi");
             }
         });
     }
@@ -234,6 +248,23 @@ public class DBHandler {
         });
 
         alert.show();
+    }
+
+    public void DeleteUserPhoto(String uId){
+        //Kullanılmaya Uygun değil!!!
+        StorageReference storageReference = firebaseStorage.getReferenceFromUrl("gs://food-8ce3e.appspot.com/UserImage/DGFSuNsZY6esOz8Cueo7C9OfnEx1userprofilephoto");
+        storageReference.delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        System.out.println("Sildim");
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                System.out.println("silemedim. hata kodu " + e);
+            }
+        });
     }
 
 }
