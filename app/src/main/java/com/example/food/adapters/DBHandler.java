@@ -4,17 +4,14 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.text.TextUtils;
+import android.net.Uri;
 import android.util.Log;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
 import com.example.food.activities.MainActivity;
 import com.example.food.activities.MainMenuActivity;
-import com.example.food.activities.ui.profile.ProfileFragment;
-import com.example.food.models.Beer;
 import com.example.food.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -28,8 +25,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-
-import java.util.HashMap;
 
 public class DBHandler {
 
@@ -70,7 +65,7 @@ public class DBHandler {
         this.firestore = firestore;
     }
 
-    public DBHandler(FirebaseAuth mAuth, FirebaseFirestore firestore ,FirebaseStorage firebaseStorage) {
+    public DBHandler(FirebaseAuth mAuth, FirebaseFirestore firestore, FirebaseStorage firebaseStorage) {
         mAuth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
         firebaseStorage = FirebaseStorage.getInstance();
@@ -146,8 +141,8 @@ public class DBHandler {
                          */
                         updatePass(pass, loginActivity, mAuth.getCurrentUser().getUid());
 
-                        Intent intent = new Intent(loginActivity , MainMenuActivity.class);
-                        intent.putExtra("uId" , mAuth.getCurrentUser().getUid());
+                        Intent intent = new Intent(loginActivity, MainMenuActivity.class);
+                        intent.putExtra("uId", mAuth.getCurrentUser().getUid());
                         loginActivity.startActivity(intent);
 
                         Toast.makeText(loginActivity, "Giriş Başarılı!", Toast.LENGTH_SHORT).show();
@@ -196,9 +191,9 @@ public class DBHandler {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful())
-                    Log.e("Başarılı",  "Firestore'dan silindi");
+                    Log.d("Başarılı", "Firestore'dan silindi");
                 else
-                    Log.e("Başarısız",  "Firestore'dan silinmedi");
+                    Log.e("Başarısız", "Firestore'dan silinmedi");
             }
         });
     }
@@ -208,7 +203,7 @@ public class DBHandler {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful())
-                    Log.e("Başarılı",  "Kişilerden silindi");
+                    Log.d("Başarılı", "Kişilerden silindi");
                 else
                     Log.e("Başarısız", "Kişilerden silinmedi");
             }
@@ -227,7 +222,7 @@ public class DBHandler {
         });
     }
 
-    public void SignOut(Activity activity){
+    public void SignOut(Activity activity) {
 
         AlertDialog.Builder alert = new AlertDialog.Builder(activity);
         alert.setTitle("Çıkış Yap");
@@ -250,21 +245,19 @@ public class DBHandler {
         alert.show();
     }
 
-    public void DeleteUserPhoto(String uId){
-        //Kullanılmaya Uygun değil!!!
-        StorageReference storageReference = firebaseStorage.getReferenceFromUrl("gs://food-8ce3e.appspot.com/UserImage/DGFSuNsZY6esOz8Cueo7C9OfnEx1userprofilephoto");
-        storageReference.delete()
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        System.out.println("Sildim");
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
+    public void DeleteUserPhoto(String uId, Uri uri) {
+
+        StorageReference storageReference = firebaseStorage.getReferenceFromUrl(uri.toString());
+        storageReference.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.d("Başarılı" , "Silme Başarılı!");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                System.out.println("silemedim. hata kodu " + e);
+                Log.e("Başarısız" , e.getMessage());
             }
         });
     }
-
 }

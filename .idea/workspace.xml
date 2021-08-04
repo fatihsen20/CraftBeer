@@ -11,12 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec47c6cc-8b72-462e-8d75-ae563edf91c6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/becks.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/carlsberg.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/corona.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/danger_button.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/efespilsen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/guinness.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/NoteActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/adapters/NoteAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/models/Note.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/add.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/notes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_note.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/custom_note.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -27,23 +28,20 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/AddPhotoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/AddPhotoActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/ui/home/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/ui/home/HomeFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/MainMenuActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/MainMenuActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/ui/profile/ProfileFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/ui/profile/ProfileFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/food/adapters/BeerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/adapters/BeerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/ui/slideshow/SlideshowFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/ui/notes/NotesFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/ui/slideshow/SlideshowViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/activities/ui/notes/NotesViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/food/adapters/DBHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/adapters/DBHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/food/models/Beer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/food/models/Beer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bomontipa.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/efesmalt.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/heineken.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/heineken.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/tuborggold.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/custom_beer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/custom_beer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_slideshow.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_notes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,9 +64,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="layoutResourceFile" />
-        <option value="Class" />
         <option value="resourceFile" />
+        <option value="Class" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -90,7 +88,7 @@
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="memory.settings.postsync.last.time.stamp" value="1627976834618" />
+    <property name="memory.settings.postsync.last.time.stamp" value="1628064410481" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -118,6 +116,9 @@
       <recent name="$PROJECT_DIR$/app/src/main/res/anim" />
       <recent name="$PROJECT_DIR$/app/src/main/java/com/example/food/adapters" />
       <recent name="$PROJECT_DIR$/app/src" />
+    </key>
+    <key name="android.template.-183439155">
+      <recent name="com.example.food.activities" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
@@ -256,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627909849704</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="AnaMenu düzenlendi.&#10;Profil menüsü düzenlendi.Kişiye özel profil fotoğrafı kullanılıyor.&#10;Profil Menüsüne DeleteUser butonu eklendi.&#10;Profil fotoğrafını silmek için bir method yazıldı ama şimdilik çalışmıyor.">
+      <created>1627996706704</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1627996706704</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -267,27 +275,29 @@
     <MESSAGE value="--" />
     <MESSAGE value="Veritabanından Profil Kısmına veri aktarımı sağlandı.&#10;Splash Page tasarımı yapıldı.&#10;Animasyonlar Eklendi." />
     <MESSAGE value="Profil Fotoğrafı Eklendi.&#10;Çıkış Yap Kısmı Yapıldı.&#10;Password Toogle Yapıldı.&#10;Kodlar Düzenlendi." />
-    <option name="LAST_COMMIT_MESSAGE" value="Profil Fotoğrafı Eklendi.&#10;Çıkış Yap Kısmı Yapıldı.&#10;Password Toogle Yapıldı.&#10;Kodlar Düzenlendi." />
+    <MESSAGE value="AnaMenu düzenlendi.&#10;Profil menüsü düzenlendi.Kişiye özel profil fotoğrafı kullanılıyor.&#10;Profil Menüsüne DeleteUser butonu eklendi.&#10;Profil fotoğrafını silmek için bir method yazıldı ama şimdilik çalışmıyor." />
+    <option name="LAST_COMMIT_MESSAGE" value="AnaMenu düzenlendi.&#10;Profil menüsü düzenlendi.Kişiye özel profil fotoğrafı kullanılıyor.&#10;Profil Menüsüne DeleteUser butonu eklendi.&#10;Profil fotoğrafını silmek için bir method yazıldı ama şimdilik çalışmıyor." />
   </component>
   <component name="WindowStateProjectService">
     <state x="610" y="278" key="#PSD" timestamp="1627899331259">
       <screen x="0" y="23" width="1920" height="986" />
     </state>
     <state x="610" y="278" key="#PSD/0.23.1920.986@0.23.1920.986" timestamp="1627899331259" />
-    <state x="1116" y="255" key="#com.intellij.ide.util.MemberChooser" timestamp="1627905305599">
-      <screen x="0" y="23" width="1920" height="988" />
+    <state x="1116" y="255" key="#com.intellij.ide.util.MemberChooser" timestamp="1628067265899">
+      <screen x="0" y="23" width="1920" height="986" />
     </state>
     <state x="773" y="263" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1627373757516" />
     <state x="1116" y="254" key="#com.intellij.ide.util.MemberChooser/0.23.1920.980@0.23.1920.980" timestamp="1627475561163" />
     <state x="1116" y="254" key="#com.intellij.ide.util.MemberChooser/0.23.1920.982@0.23.1920.982" timestamp="1627564301410" />
     <state x="1116" y="254" key="#com.intellij.ide.util.MemberChooser/0.23.1920.984@0.23.1920.984" timestamp="1627562690840" />
-    <state x="1116" y="255" key="#com.intellij.ide.util.MemberChooser/0.23.1920.986@0.23.1920.986" timestamp="1627903560969" />
+    <state x="1116" y="255" key="#com.intellij.ide.util.MemberChooser/0.23.1920.986@0.23.1920.986" timestamp="1628067265899" />
     <state x="1116" y="255" key="#com.intellij.ide.util.MemberChooser/0.23.1920.988@0.23.1920.988" timestamp="1627905305599" />
-    <state x="501" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1627977785467">
-      <screen x="0" y="23" width="1920" height="984" />
+    <state x="501" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1628065004026">
+      <screen x="0" y="23" width="1920" height="986" />
     </state>
     <state x="501" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.980@0.23.1920.980" timestamp="1627635946734" />
     <state x="501" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.984@0.23.1920.984" timestamp="1627977785467" />
+    <state x="501" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.986@0.23.1920.986" timestamp="1628065004026" />
     <state x="663" y="260" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1627559606102">
       <screen x="0" y="23" width="1920" height="982" />
     </state>
@@ -298,57 +308,57 @@
     </state>
     <state x="524" y="281" key="AndroidCreateResourceDirectoryDialog/0.23.1920.978@0.23.1920.978" timestamp="1627370947027" />
     <state x="524" y="283" key="AndroidCreateResourceDirectoryDialog/0.23.1920.986@0.23.1920.986" timestamp="1627653081046" />
-    <state x="548" y="299" key="AndroidCreateResourceFileDialog" timestamp="1627992601744">
-      <screen x="0" y="23" width="1920" height="984" />
+    <state x="548" y="300" key="AndroidCreateResourceFileDialog" timestamp="1628065730095">
+      <screen x="0" y="23" width="1920" height="986" />
     </state>
     <state x="548" y="302" key="AndroidCreateResourceFileDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1627372429285" />
     <state x="548" y="298" key="AndroidCreateResourceFileDialog/0.23.1920.982@0.23.1920.982" timestamp="1627467398619" />
     <state x="548" y="299" key="AndroidCreateResourceFileDialog/0.23.1920.984@0.23.1920.984" timestamp="1627992601744" />
-    <state x="548" y="300" key="AndroidCreateResourceFileDialog/0.23.1920.986@0.23.1920.986" timestamp="1627894010134" />
+    <state x="548" y="300" key="AndroidCreateResourceFileDialog/0.23.1920.986@0.23.1920.986" timestamp="1628065730095" />
     <state x="781" y="361" key="AndroidCreateXmlResourceDialog" timestamp="1627899600656">
       <screen x="0" y="23" width="1920" height="988" />
     </state>
     <state x="781" y="360" key="AndroidCreateXmlResourceDialog/0.23.1920.984@0.23.1920.984" timestamp="1627470177063" />
     <state x="781" y="361" key="AndroidCreateXmlResourceDialog/0.23.1920.988@0.23.1920.988" timestamp="1627899600656" />
-    <state x="461" y="109" key="CommitChangelistDialog2" timestamp="1627909848319">
-      <screen x="0" y="23" width="1920" height="988" />
+    <state x="461" y="109" key="CommitChangelistDialog2" timestamp="1627996705573">
+      <screen x="0" y="23" width="1920" height="986" />
     </state>
     <state x="461" y="108" key="CommitChangelistDialog2/0.23.1920.980@0.23.1920.980" timestamp="1627567450888" />
     <state x="461" y="108" key="CommitChangelistDialog2/0.23.1920.982@0.23.1920.982" timestamp="1627566317899" />
     <state x="461" y="108" key="CommitChangelistDialog2/0.23.1920.984@0.23.1920.984" timestamp="1627555904943" />
-    <state x="461" y="109" key="CommitChangelistDialog2/0.23.1920.986@0.23.1920.986" timestamp="1627653939522" />
+    <state x="461" y="109" key="CommitChangelistDialog2/0.23.1920.986@0.23.1920.986" timestamp="1627996705573" />
     <state x="461" y="109" key="CommitChangelistDialog2/0.23.1920.988@0.23.1920.988" timestamp="1627909848319" />
-    <state width="1473" height="208" key="GridCell.Tab.0.bottom" timestamp="1627988377410">
-      <screen x="0" y="23" width="1920" height="984" />
+    <state width="1473" height="208" key="GridCell.Tab.0.bottom" timestamp="1628075836677">
+      <screen x="0" y="23" width="1920" height="986" />
     </state>
     <state width="1337" height="208" key="GridCell.Tab.0.bottom/0.23.1920.980@0.23.1920.980" timestamp="1627641770765" />
     <state width="1337" height="208" key="GridCell.Tab.0.bottom/0.23.1920.982@0.23.1920.982" timestamp="1627889625961" />
-    <state width="1473" height="208" key="GridCell.Tab.0.bottom/0.23.1920.984@0.23.1920.984" timestamp="1627988377410" />
-    <state width="1337" height="208" key="GridCell.Tab.0.bottom/0.23.1920.986@0.23.1920.986" timestamp="1627896560602" />
+    <state width="1473" height="208" key="GridCell.Tab.0.bottom/0.23.1920.984@0.23.1920.984" timestamp="1628064428396" />
+    <state width="1473" height="208" key="GridCell.Tab.0.bottom/0.23.1920.986@0.23.1920.986" timestamp="1628075836677" />
     <state width="1473" height="208" key="GridCell.Tab.0.bottom/0.23.1920.988@0.23.1920.988" timestamp="1627912299013" />
-    <state width="1473" height="208" key="GridCell.Tab.0.center" timestamp="1627988377410">
-      <screen x="0" y="23" width="1920" height="984" />
+    <state width="1473" height="208" key="GridCell.Tab.0.center" timestamp="1628075836676">
+      <screen x="0" y="23" width="1920" height="986" />
     </state>
     <state width="1337" height="208" key="GridCell.Tab.0.center/0.23.1920.980@0.23.1920.980" timestamp="1627641770765" />
     <state width="1337" height="208" key="GridCell.Tab.0.center/0.23.1920.982@0.23.1920.982" timestamp="1627889625960" />
-    <state width="1473" height="208" key="GridCell.Tab.0.center/0.23.1920.984@0.23.1920.984" timestamp="1627988377410" />
-    <state width="1337" height="208" key="GridCell.Tab.0.center/0.23.1920.986@0.23.1920.986" timestamp="1627896560602" />
+    <state width="1473" height="208" key="GridCell.Tab.0.center/0.23.1920.984@0.23.1920.984" timestamp="1628064428396" />
+    <state width="1473" height="208" key="GridCell.Tab.0.center/0.23.1920.986@0.23.1920.986" timestamp="1628075836676" />
     <state width="1473" height="208" key="GridCell.Tab.0.center/0.23.1920.988@0.23.1920.988" timestamp="1627912299013" />
-    <state width="1473" height="208" key="GridCell.Tab.0.left" timestamp="1627988377409">
-      <screen x="0" y="23" width="1920" height="984" />
+    <state width="1473" height="208" key="GridCell.Tab.0.left" timestamp="1628075836676">
+      <screen x="0" y="23" width="1920" height="986" />
     </state>
     <state width="1337" height="208" key="GridCell.Tab.0.left/0.23.1920.980@0.23.1920.980" timestamp="1627641770764" />
     <state width="1337" height="208" key="GridCell.Tab.0.left/0.23.1920.982@0.23.1920.982" timestamp="1627889625960" />
-    <state width="1473" height="208" key="GridCell.Tab.0.left/0.23.1920.984@0.23.1920.984" timestamp="1627988377409" />
-    <state width="1337" height="208" key="GridCell.Tab.0.left/0.23.1920.986@0.23.1920.986" timestamp="1627896560601" />
+    <state width="1473" height="208" key="GridCell.Tab.0.left/0.23.1920.984@0.23.1920.984" timestamp="1628064428395" />
+    <state width="1473" height="208" key="GridCell.Tab.0.left/0.23.1920.986@0.23.1920.986" timestamp="1628075836676" />
     <state width="1473" height="208" key="GridCell.Tab.0.left/0.23.1920.988@0.23.1920.988" timestamp="1627912299012" />
-    <state width="1473" height="208" key="GridCell.Tab.0.right" timestamp="1627988377410">
-      <screen x="0" y="23" width="1920" height="984" />
+    <state width="1473" height="208" key="GridCell.Tab.0.right" timestamp="1628075836677">
+      <screen x="0" y="23" width="1920" height="986" />
     </state>
     <state width="1337" height="208" key="GridCell.Tab.0.right/0.23.1920.980@0.23.1920.980" timestamp="1627641770765" />
     <state width="1337" height="208" key="GridCell.Tab.0.right/0.23.1920.982@0.23.1920.982" timestamp="1627889625961" />
-    <state width="1473" height="208" key="GridCell.Tab.0.right/0.23.1920.984@0.23.1920.984" timestamp="1627988377410" />
-    <state width="1337" height="208" key="GridCell.Tab.0.right/0.23.1920.986@0.23.1920.986" timestamp="1627896560602" />
+    <state width="1473" height="208" key="GridCell.Tab.0.right/0.23.1920.984@0.23.1920.984" timestamp="1628064428396" />
+    <state width="1473" height="208" key="GridCell.Tab.0.right/0.23.1920.986@0.23.1920.986" timestamp="1628075836677" />
     <state width="1473" height="208" key="GridCell.Tab.0.right/0.23.1920.988@0.23.1920.988" timestamp="1627912299013" />
     <state x="461" y="179" key="SettingsEditor" timestamp="1627373459558">
       <screen x="0" y="0" width="1920" height="1080" />

@@ -18,6 +18,6 @@
 
     <string name="menu_home">Ana Sayfa</string>
     <string name="menu_gallery">Profil</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_slideshow">Tariflerim</string>
     <string name="title_activity_main_menu">MainMenuActivity</string>
 </resources>

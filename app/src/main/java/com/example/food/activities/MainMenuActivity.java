@@ -54,6 +54,11 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        //Back Press Canceled
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_menu, menu);

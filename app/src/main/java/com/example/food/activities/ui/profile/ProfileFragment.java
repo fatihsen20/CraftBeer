@@ -1,11 +1,9 @@
 package com.example.food.activities.ui.profile;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -20,7 +18,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.bumptech.glide.Glide;
@@ -42,15 +39,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-import java.util.HashMap;
-
 public class ProfileFragment extends Fragment {
-    private TextView name, age, email;
+    private TextView name, email;
     private DBHandler dbHandler;
     private FirebaseFirestore firestore;
     private FirebaseAuth mAuth;
     FirebaseStorage firebaseStorage;
-    private ImageView profilePhoto, changeProfilePhoto;
+    private ImageView profilePhoto;
     private ProgressDialog progressDialog;
     private String uId;
     private Button deleteUser;
@@ -63,11 +58,9 @@ public class ProfileFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_profile, container, false);
 
         name = root.findViewById(R.id.fragment_profile_Name);
-        age = root.findViewById(R.id.fragment_profile_Age);
         email = root.findViewById(R.id.fragment_profile_email);
         profilePhoto = root.findViewById(R.id.fragment_profile_Image);
         deleteUser = root.findViewById(R.id.fragment_profile_Delete);
-        //changeProfilePhoto = root.findViewById(R.id.fragment_profile_changeImage);
 
         firestore = FirebaseFirestore.getInstance();
         dbHandler = new DBHandler(mAuth, firestore , firebaseStorage);
@@ -100,9 +93,17 @@ public class ProfileFragment extends Fragment {
                 alert.setNegativeButton("Evet", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+
+                        FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
+                        StorageReference storageReference = firebaseStorage.getReference();
+                        storageReference.child("UserImage").child(uId+"userprofilephoto").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            @Override
+                            public void onSuccess(Uri uri) {
+                                dbHandler.DeleteUserPhoto(uId,uri);
+                            }
+                        });
                         dbHandler.DeleteUserFirestore(uId);
                         dbHandler.DeleteUserAuthentication(uId);
-                        //dbHandler.DeleteUserPhoto(uId);
                         Intent intent2 = new Intent(getContext(), MainActivity.class);
                         startActivity(intent2);
                     }
@@ -164,7 +165,6 @@ public class ProfileFragment extends Fragment {
                 if (task.isSuccessful()) {
                     try {
                         name.setText(task.getResult().getData().get("fullname").toString());
-                        age.setText(task.getResult().getData().get("age").toString());
                         email.setText(task.getResult().getData().get("email").toString());
                     }
                     catch (Exception e) {
