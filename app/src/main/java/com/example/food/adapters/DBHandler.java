@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 
 import com.example.food.activities.MainActivity;
 import com.example.food.activities.MainMenuActivity;
+import com.example.food.models.Note;
 import com.example.food.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -23,6 +24,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.WriteBatch;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -251,13 +255,51 @@ public class DBHandler {
         storageReference.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                Log.d("Başarılı" , "Silme Başarılı!");
+                Log.d("Başarılı", "Silme Başarılı!");
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Log.e("Başarısız" , e.getMessage());
+                Log.e("Başarısız", e.getMessage());
             }
         });
+    }
+
+    public void addNote(Note note, String uId, String title) {
+        firestore.collection("Tarifler").document(uId+title).set(note)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Log.d("Başarılı", "Kayıt Ok.");
+
+                        }
+                        else
+                            Log.e("Başarısız" , task.getException().toString());
+                    }
+                });
+    }
+
+    public void deleteNotes(String uId){
+        firestore.collection("Tarifler")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                if (document.getId().contains(uId)){
+                                    firestore.collection("Tarifler").document(document.getId()).delete();
+                                    Log.d("Başarılı", "Silindi.");
+                                }
+                            }
+
+                        }
+                        else {
+                            Log.e("Başarısız", "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
     }
 }

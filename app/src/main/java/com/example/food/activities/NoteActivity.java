@@ -4,19 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.food.R;
 
 public class NoteActivity extends AppCompatActivity {
-    private TextView title , desc;
-    private ImageView beerPhoto;
+    private TextView title , desc, type;
 
     public void init(){
         title = findViewById(R.id.activity_note_title);
         desc = findViewById(R.id.activity_note_desc);
-        beerPhoto = findViewById(R.id.activity_note_Image);
+        type = findViewById(R.id.activity_note_type);
 
         Intent intent = getIntent();
 
@@ -25,10 +25,10 @@ public class NoteActivity extends AppCompatActivity {
         String txtType = intent.getStringExtra("type");
         int image = intent.getIntExtra("image" , 0);
 
+        desc.setMovementMethod(new ScrollingMovementMethod());
         title.setText(txtTitle);
         desc.setText(txtDesc);
-        beerPhoto.setImageResource(image);
-
+        type.setText(txtType);
     }
 
     @Override

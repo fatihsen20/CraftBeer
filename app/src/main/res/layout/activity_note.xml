@@ -7,39 +7,36 @@
     android:padding="5dp"
     tools:context=".activities.NoteActivity">
 
-    <LinearLayout
-        android:id="@+id/activity_note_container"
+    <TextView
+        android:id="@+id/activity_note_title"
+        android:text="Başlık"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        >
-        <ImageView
-            android:id="@+id/activity_note_Image"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:background="@color/bgactivity"
-            android:scaleType="fitXY"/>
+        android:textStyle="bold"
+        android:textColor="@color/textcolor"
+        android:textSize="19sp"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="5dp"/>
 
-        <TextView
-            android:id="@+id/activity_note_title"
-            android:text="Başlık"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textColor="@color/textcolor"
-            android:textSize="19sp"
-            android:textAlignment="center"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="5dp"/>
 
-    </LinearLayout>
-
+    <TextView
+        android:id="@+id/activity_note_type"
+        android:text="Bira Tipi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activity_note_title"
+        android:textStyle="bold"
+        android:textColor="@color/textcolor"
+        android:textSize="19sp"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"/>
     <View
         android:id="@+id/activity_note_line"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_below="@+id/activity_note_container"
+        android:layout_below="@+id/activity_note_type"
         android:background="@color/textcolor"
         android:layout_marginTop="8dp"
         />
@@ -48,12 +45,13 @@
         android:id="@+id/activity_note_desc"
         android:text="desc"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="600dp"
         android:layout_below="@+id/activity_note_line"
         android:textColor="@color/textcolor"
         android:textSize="19sp"
         android:textAlignment="center"
         android:gravity="center_horizontal"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="8dp"
+        android:scrollbars = "vertical" />
 
 </RelativeLayout>

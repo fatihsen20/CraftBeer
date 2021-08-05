@@ -51,11 +51,9 @@ public class NoteAdapter extends BaseAdapter {
         if (convertView != null){
             title = convertView.findViewById(R.id.custom_note_title);
             beerType = convertView.findViewById(R.id.custom_note_beerType);
-            beerPhoto = convertView.findViewById(R.id.custom_note_beerPhoto);
 
             Note note = notes.get(position);
             title.setText(note.getTitle());
-            beerPhoto.setImageResource(note.getImage());
             beerType.setText(note.getBeertype());
 
         }

@@ -19,4 +19,14 @@
         android:verticalSpacing="3dp"
         android:background="@color/bgactivity"
         />
+
+    <Button
+        android:id="@+id/fragment_notes_btnAdd"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/add_note_ic" />
 </RelativeLayout>

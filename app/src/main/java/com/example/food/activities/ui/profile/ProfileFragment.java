@@ -102,6 +102,7 @@ public class ProfileFragment extends Fragment {
                                 dbHandler.DeleteUserPhoto(uId,uri);
                             }
                         });
+                        dbHandler.deleteNotes(uId);
                         dbHandler.DeleteUserFirestore(uId);
                         dbHandler.DeleteUserAuthentication(uId);
                         Intent intent2 = new Intent(getContext(), MainActivity.class);

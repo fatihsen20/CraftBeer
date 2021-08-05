@@ -2,13 +2,11 @@ package com.example.food.models;
 
 public class Note {
     private String title, desc , beertype;
-    private int image;
 
-    public Note(String title, String desc, String beertype, int image) {
+    public Note(String title, String desc, String beertype) {
         this.title = title;
         this.desc = desc;
         this.beertype = beertype;
-        this.image = image;
     }
 
     public String getTitle() {
@@ -35,11 +33,4 @@ public class Note {
         this.beertype = beertype;
     }
 
-    public int getImage() {
-        return image;
-    }
-
-    public void setImage(int image) {
-        this.image = image;
-    }
 }
