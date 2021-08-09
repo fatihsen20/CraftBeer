@@ -49,9 +49,10 @@
         android:layout_below="@+id/activity_note_line"
         android:textColor="@color/textcolor"
         android:textSize="19sp"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:gravity="center_horizontal"
         android:layout_marginTop="8dp"
-        android:scrollbars = "vertical" />
+        android:scrollbars = "vertical"
+        tools:ignore="RtlCompat" />
 
 </RelativeLayout>

@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.food.R;
-import com.example.food.models.Beer;
 import com.example.food.models.Note;
 
 import java.util.ArrayList;

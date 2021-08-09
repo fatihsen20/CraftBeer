@@ -2,7 +2,11 @@ package com.example.food.activities;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -20,6 +24,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText email, pass, passvalidation, name, age;
+    private CheckBox visiblepass , visiblepassValidation;
     private FirebaseAuth mAuth;
     private FirebaseFirestore firestore;
     private FirebaseUser mUser;
@@ -31,6 +36,8 @@ public class RegisterActivity extends AppCompatActivity {
         passvalidation = findViewById(R.id.activity_register_passValidation);
         name = findViewById(R.id.activity_register_name);
         age = findViewById(R.id.activity_register_age);
+        visiblepass = findViewById(R.id.activity_register_Visiblepass);
+        visiblepassValidation = findViewById(R.id.activity_register_VisiblepassValidation);
         dbHandler = new DBHandler(mAuth , mUser , firestore);
         Toolbar toolbar = findViewById(R.id.toolbar);
 
@@ -45,6 +52,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         init();
+        itemClick();
         Animation();
     }
 
@@ -73,8 +81,31 @@ public class RegisterActivity extends AppCompatActivity {
         else
             Toast.makeText(this, "Lütfen Kutucukları Boş Bırakmayınız!", Toast.LENGTH_SHORT).show();
     }
+
     public void Animation(){
         Animations.addAnimation(this, R.id.activity_register_BtnReg, R.anim.bounce , 1000);
+    }
+
+    public void itemClick(){
+        visiblepass.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                    pass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                else
+                    pass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            }
+        });
+
+        visiblepassValidation.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                    passvalidation.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                else
+                    passvalidation.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            }
+        });
     }
 
 }

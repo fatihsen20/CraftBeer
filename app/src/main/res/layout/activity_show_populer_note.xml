@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.ShowPopulerNoteActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <TextView
+        android:id="@+id/activity_show_populer_note_name"
+        android:text="Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:textStyle="bold"
+        android:textColor="@color/textcolor"
+        android:textSize="19sp"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:padding="5dp"
+        android:layout_marginTop="5dp"/>
+
+
+    <TextView
+        android:id="@+id/activity_show_populer_note_type"
+        android:text="Bira Tipi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activity_show_populer_note_name"
+        android:textStyle="bold"
+        android:textColor="@color/textcolor"
+        android:textSize="19sp"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:padding="5dp"
+        android:layout_marginTop="10dp"/>
+    <View
+        android:id="@+id/activity_show_populer_note_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/activity_show_populer_note_type"
+        android:background="@color/textcolor"
+        android:padding="5dp"
+        android:layout_marginTop="8dp"
+        />
+
+    <TextView
+        android:id="@+id/activity_show_populer_note_desc"
+        android:text="desc"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/activity_show_populer_note_line"
+        android:textColor="@color/textcolor"
+        android:textSize="19sp"
+        android:textAlignment="textStart"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:scrollbars = "vertical"
+        android:padding="5dp"
+        tools:ignore="RtlCompat" />
+    <ImageView
+        android:id="@+id/activity_show_populer_note_Image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/activity_show_populer_note_desc"
+        android:layout_marginTop="3dp"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:padding="5dp"
+        />
+
+</RelativeLayout>

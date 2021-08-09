@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import com.example.food.activities.MainActivity;
 import com.example.food.activities.MainMenuActivity;
 import com.example.food.models.Note;
+import com.example.food.models.PopulerNote;
 import com.example.food.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -26,7 +27,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.firestore.WriteBatch;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -74,6 +74,13 @@ public class DBHandler {
         firestore = FirebaseFirestore.getInstance();
         firebaseStorage = FirebaseStorage.getInstance();
         this.mAuth = mAuth;
+        this.firestore = firestore;
+        this.firebaseStorage = firebaseStorage;
+    }
+
+    public DBHandler(FirebaseFirestore firestore, FirebaseStorage firebaseStorage) {
+        firestore = FirebaseFirestore.getInstance();
+        firebaseStorage = FirebaseStorage.getInstance();
         this.firestore = firestore;
         this.firebaseStorage = firebaseStorage;
     }
