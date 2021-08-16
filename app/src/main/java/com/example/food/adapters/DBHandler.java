@@ -309,4 +309,31 @@ public class DBHandler {
                     }
                 });
     }
+
+    public void deleteNote(String uId, String title){
+        firestore.collection("Tarifler").document(uId+title)
+                .delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful())
+                    Log.d("Başarılı", "Silindi!");
+
+                else
+                    Log.e("Başarısız", "Silme İşlemi Başarısız!");
+            }
+        });
+    }
+    public void deleteNotePhoto(String uId, String title){
+        StorageReference storageReference = firebaseStorage.getReference();
+        storageReference.child("NoteImage").child(uId+title).delete()
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful())
+                            Log.d("Başarılı", "Dosya Silindi!");
+                        else
+                            Log.e("Başarısız", task.getException().getMessage());
+                    }
+                });
+    }
 }

@@ -4,12 +4,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,23 +23,33 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.example.food.R;
+import com.example.food.activities.ui.notes.NotesFragment;
+import com.example.food.adapters.DBHandler;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 public class NoteActivity extends AppCompatActivity {
     private TextView title , desc, type;
     private ImageView noteImage;
+    private Button btnDelete;
     private ProgressDialog progressDialog;
     private String uId;
     private String txtTitle;
+    private FirebaseFirestore firestore;
+    private FirebaseStorage firebaseStorage;
+    private DBHandler dbHandler;
 
     public void init(){
         title = findViewById(R.id.activity_note_title);
         desc = findViewById(R.id.activity_note_desc);
         type = findViewById(R.id.activity_note_type);
         noteImage = findViewById(R.id.activity_note_Image);
+        btnDelete = findViewById(R.id.activity_note_btnDelete);
+
+        dbHandler = new DBHandler(firestore, firebaseStorage);
 
         Intent intent = getIntent();
 
@@ -49,7 +63,33 @@ public class NoteActivity extends AppCompatActivity {
         desc.setText(txtDesc);
         type.setText(txtType);
 
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder alert = new AlertDialog.Builder(NoteActivity.this);
+                alert.setTitle("Tarifi Sil");
+                alert.setMessage("Tarifi Silmek İstediğinizden Emin misiniz?");
+                alert.setPositiveButton("Hayır", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //
+                    }
+                });
+                alert.setNegativeButton("Evet", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dbHandler.deleteNotePhoto(uId,txtTitle);
+                        dbHandler.deleteNote(uId,txtTitle);
+                        onBackPressed();
+                    }
+                });
+                alert.show();
+
+            }
+        });
+
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

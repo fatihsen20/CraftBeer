@@ -58,11 +58,27 @@
     <ImageView
         android:id="@+id/activity_note_Image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="205dp"
         android:layout_below="@+id/activity_note_desc"
         android:layout_marginTop="5dp"
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
+        />
+
+    <Button
+        android:id="@+id/activity_note_btnDelete"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activity_note_Image"
+        android:layout_alignStart="@id/activity_note_Image"
+        android:layout_alignEnd="@+id/activity_note_Image"
+        android:layout_marginTop="5dp"
+        android:text="Tarifi Sil"
+        android:textAllCaps="false"
+        android:textColor="@color/btntextcolor"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:background="@drawable/danger_button"
         />
 
 </RelativeLayout>

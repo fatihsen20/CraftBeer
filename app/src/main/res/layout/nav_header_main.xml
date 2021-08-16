@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Bira Sevenler Uygulaması"
+        android:text="Bira Tarifleri Uygulaması"
         android:textStyle="bold"
         android:textSize="20sp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
@@ -35,5 +35,5 @@
         android:layout_height="wrap_content"
         android:textSize="17sp"
         android:textStyle="bold"
-        android:text="Birasever@gmail.com" />
+        android:text="craftbeertr@gmail.com" />
 </LinearLayout>
