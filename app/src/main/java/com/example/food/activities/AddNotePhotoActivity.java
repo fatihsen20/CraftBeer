@@ -1,5 +1,9 @@
 package com.example.food.activities;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -9,43 +13,39 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.food.R;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
-public class AddPhotoActivity extends AppCompatActivity {
+public class AddNotePhotoActivity extends AppCompatActivity {
 
-    private ImageView userPhoto;
-    private Button selectPhoto , savePhoto;
+    private ImageView notePhoto;
+    private Button selectPhoto, savePhoto;
     private FirebaseStorage firebaseStorage;
     private FirebaseAuth mAuth;
     private Uri filePath;
     private Intent intent;
     private String uId;
+    private String beerName;
     private ProgressDialog progressDialog;
     private static final int IMAGE_REQUEST = 111;
 
-    public void init(){
+    public void init() {
         mAuth = FirebaseAuth.getInstance();
         firebaseStorage = FirebaseStorage.getInstance();
 
-        userPhoto = findViewById(R.id.activity_add_photo_userPhoto);
-        selectPhoto = findViewById(R.id.activity_add_photo_selectPhoto);
-        savePhoto = findViewById(R.id.activity_add_photo_savePhoto);
+        notePhoto = findViewById(R.id.activity_add_note_photo_notePhoto);
+        selectPhoto = findViewById(R.id.activity_add_note_photo_selectPhoto);
+        savePhoto = findViewById(R.id.activity_add_note_photo_savePhoto);
 
         intent = getIntent();
         uId = intent.getStringExtra("uId");
+        beerName = intent.getStringExtra("beerName");
 
         selectPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,11 +66,11 @@ public class AddPhotoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_photo);
+        setContentView(R.layout.activity_add_note_photo);
 
         init();
-    }
 
+    }
 
     private void selectPhoto() {
         Intent intent = new Intent();
@@ -80,38 +80,33 @@ public class AddPhotoActivity extends AppCompatActivity {
 
     }
 
-    public void savePhoto(){
+    public void savePhoto() {
 
-        if (filePath!=null){
+        if (filePath != null) {
             showProgressDialog();
             StorageReference storageReference = firebaseStorage.getReference();
-            storageReference.child("UserImage").child(uId+"userprofilephoto").putFile(filePath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            storageReference.child("NoteImage").child(uId+beerName).putFile(filePath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    dismissProgressDialog();
-                    Toast.makeText(AddPhotoActivity.this, "Fotoğraf Başarıyla Kaydedildi.", Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
+                    Toast.makeText(AddNotePhotoActivity.this, "Fotoğraf Başarıyla Kaydedildi.", Toast.LENGTH_SHORT).show();
                     onBackPressed();
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    dismissProgressDialog();
-                    Toast.makeText(AddPhotoActivity.this, "Fotoğraf Kaydedilmedi.", Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
+                    Toast.makeText(AddNotePhotoActivity.this, "Fotoğraf Kaydedilmedi.", Toast.LENGTH_SHORT).show();
                 }
             });
         }
     }
 
     private void showProgressDialog() {
-        progressDialog = new ProgressDialog(AddPhotoActivity.this);
+        progressDialog = new ProgressDialog(AddNotePhotoActivity.this);
         progressDialog.setMessage("Yükleniyor...");
         progressDialog.setCancelable(false);
         progressDialog.show();
-    }
-
-
-    private void  dismissProgressDialog(){
-        progressDialog.dismiss();
     }
 
     @Override
@@ -121,9 +116,8 @@ public class AddPhotoActivity extends AppCompatActivity {
         if (requestCode == IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             filePath = data.getData();
             try {
-                Picasso.with(AddPhotoActivity.this).load(filePath).fit().centerCrop().into(userPhoto);
-            }
-            catch (Exception e) {
+                Picasso.with(AddNotePhotoActivity.this).load(filePath).fit().centerCrop().into(notePhoto);
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

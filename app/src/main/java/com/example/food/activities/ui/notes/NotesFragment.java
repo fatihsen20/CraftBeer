@@ -77,6 +77,7 @@ public class NotesFragment extends Fragment {
                 intent.putExtra("title", notes.get(position).getTitle());
                 intent.putExtra("desc", notes.get(position).getDesc());
                 intent.putExtra("type", notes.get(position).getBeertype());
+                intent.putExtra("uId", uId);
                 getActivity().startActivity(intent);
             }
         });

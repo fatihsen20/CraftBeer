@@ -52,13 +52,27 @@
         android:inputType="textMultiLine"
         />
 
+
     <Button
-        android:id="@+id/activity_add_note_btnAdd"
+        android:id="@+id/activity_add_note_btnPhotoadd"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginTop="20dp"
+        android:background="@color/gray"
+        android:text="Tarif Resmi Ekle"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        />
+
+    <Button
+        android:id="@+id/activity_add_note_btnAdd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"
         android:background="@color/gray"
         android:text="Yeni Tarif Ekle"
         android:textColor="@color/white"
@@ -68,10 +82,10 @@
     <Button
         android:id="@+id/activity_add_note_btnBack"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:background="@color/gray"
         android:text="Tariflerime Dön"
         android:textColor="@color/white"
