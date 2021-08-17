@@ -323,6 +323,7 @@ public class DBHandler {
             }
         });
     }
+
     public void deleteNotePhoto(String uId, String title){
         StorageReference storageReference = firebaseStorage.getReference();
         storageReference.child("NoteImage").child(uId+title).delete()
